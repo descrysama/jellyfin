@@ -535,7 +535,6 @@ public class UserController : BaseJellyfinApiController
     /// <response code="200">User created.</response>
     /// <returns>An <see cref="UserDto"/> of the new user.</returns>
     [HttpPost("New")]
-    [Authorize(Policy = Policies.RequiresElevation)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<UserDto>> CreateUserByName([FromBody, Required] CreateUserByName request)
     {
